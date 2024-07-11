@@ -24,7 +24,6 @@ class QueryBuilder
 
     protected PDO $pdo;
     protected string $sql;
-    protected array $params = [];
 
     public function __construct(PDO $pdo)
     {
@@ -34,12 +33,6 @@ class QueryBuilder
     public function query(string $sql): self
     {
         $this->sql = $sql;
-        return $this;
-    }
-
-    public function bind($param, $value): self
-    {
-        $this->params[$param] = $value;
         return $this;
     }
 
@@ -59,19 +52,17 @@ class QueryBuilder
         return $this->sql;
     }
 
-    public function getParams(): array
-    {
-        return $this->params;
-    }
-
     public function getResult(): QueryResult
     {
-        return new QueryResult($this->pdo, $this->sql, $this->params);
+        return new QueryResult($this->pdo, $this->sql); // Figure out what to do with params
     }
 
-    public function select(array $columns = ['*']): self
+    public function select(string|array $columns = '*'): self
     {
-        $this->currentQueryPart = new Select($columns);
+        $this->currentQueryPart = is_array($columns)
+            ? new Select($columns)
+            : new Select([$columns]);
+
         $this->queryParts[] = $this->currentQueryPart;
         return $this;
     }
@@ -131,6 +122,8 @@ class QueryBuilder
         if ($this->currentQueryPart instanceof Insert) {
             $this->currentQueryPart->columns($columns);
         }
+
+        return $this;
     }
 
     public function values(array $values): self {
@@ -164,5 +157,7 @@ class QueryBuilder
         }
 
         $this->sql = implode(' ', $sql);
+
+        return $this;
     }
 }

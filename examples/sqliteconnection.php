@@ -12,5 +12,11 @@ $config = new DatabaseConfig([
 $databaseConnection = new DatabaseConnection($config);
 
 $qb = $databaseConnection->getQueryBuilder();
-$query = $qb->select('SQLITE_VERSION()')->getQuery()->getResult()->fetchOne();
+
+$query = $qb->select('SQLITE_VERSION()')
+    ->getQuery()
+    ->getResult()
+    ->fetchOne()
+;
+
 dd($query);
