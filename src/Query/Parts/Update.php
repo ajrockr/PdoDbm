@@ -3,26 +3,23 @@
 namespace Arizzo\PdoDbm\Query\Parts;
 
 use Arizzo\PdoDbm\Database\QueryResult;
-use PDO;
 
-class Update
+class Update implements QueryPartInterface
 {
     protected string $table;
     protected array $set = [];
     protected array $where = [];
     protected string $sql;
-    protected PDO $pdo;
 
-    public function __construct(PDO $pdo, string $table)
+    public function __construct(string $table)
     {
-        $this->pdo = $pdo;
         $this->table = $table;
     }
 
     public function set(array $set): self
     {
         foreach ($set as $column => $value) {
-            $this->set[] = sprintf('%s = %s', $column, $value);
+            $this->set[] = "$column = $value";
         }
 
         return $this;
@@ -37,17 +34,8 @@ class Update
     public function getSql(): string
     {
         $set = implode(', ', $this->set);
+        $where = implode(' AND ', $this->where);
 
-        return "UPDATE {$this->table} ";
-    }
-
-    public function getQuery(): self
-    {
-
-    }
-
-    public function getResult(): QueryResult
-    {
-        return new QueryResult($this->pdo, $this->sql);
+        return "UPDATE {$this->table} SET $set WHERE $where";
     }
 }

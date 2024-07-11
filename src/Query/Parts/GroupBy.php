@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class GroupBy
+class GroupBy implements QueryPartInterface
 {
     protected array $columns;
 

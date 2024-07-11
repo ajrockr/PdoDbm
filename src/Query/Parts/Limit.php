@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class Limit
+class Limit implements QueryPartInterface
 {
     protected int $limit;
 

@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class OrderBy
+class OrderBy implements QueryPartInterface
 {
     protected array $columns;
 

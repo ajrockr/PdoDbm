@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class From
+class From implements QueryPartInterface
 {
     protected string $table;
 

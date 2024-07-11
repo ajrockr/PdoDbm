@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class Where
+class Where implements QueryPartInterface
 {
     protected array $conditions;
 

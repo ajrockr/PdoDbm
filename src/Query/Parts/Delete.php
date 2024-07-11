@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class Delete
+class Delete implements QueryPartInterface
 {
     protected string $table;
     protected array $where = [];
@@ -21,6 +21,6 @@ class Delete
     public function getSql(): string
     {
         $where = implode(' AND ', $this->where);
-        return "DELETE FROM {$this->table} WHERE {$where}";
+        return "DELETE FROM {$this->table} WHERE $where";
     }
 }

@@ -2,12 +2,10 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class Insert
+class Insert implements QueryPartInterface
 {
     protected string $table;
-
     protected array $columns = [];
-
     protected array $values = [];
 
     public function __construct(string $table)

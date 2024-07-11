@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Query\Parts;
 
-class Offset
+class Offset implements QueryPartInterface
 {
     protected int $offset;
 
