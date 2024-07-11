@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Database;
 
-use Arizzo\PdoDbm\Exceptions\DatabaseException;
+use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
 use PDO;
 use PDOStatement;
 class QueryResult
@@ -32,7 +32,7 @@ class QueryResult
             $this->statement = $this->pdo->prepare($query);
             $this->statement->execute($params);
         } catch (DatabaseException $e) {
-            throw new DatabaseException("Query execution failed: " . $e->getMessage());
+            throw new DatabaseException("QueryBuilder execution failed: " . $e->getMessage());
         }
     }
 }

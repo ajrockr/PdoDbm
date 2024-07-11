@@ -2,7 +2,7 @@
 
 namespace Arizzo\PdoDbm\Database;
 
-use Arizzo\PdoDbm\Exceptions\DatabaseConfigException;
+use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
 use PDO;
 
 class DatabaseConfig

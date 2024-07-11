@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Query\Parts;
+namespace Arizzo\PdoDbm\QueryBuilder\Parts;
 
-interface QueryPartsInterface
+interface QueryPartInterface
 {
     public function getSql(): string;
 }

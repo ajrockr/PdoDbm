@@ -1,20 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Query;
+namespace Arizzo\PdoDbm\QueryBuilder;
 
 use Arizzo\PdoDbm\Database\QueryResult;
-use Arizzo\PdoDbm\Exceptions\DatabaseException;
-use Arizzo\PdoDbm\Query\Parts\Delete;
-use Arizzo\PdoDbm\Query\Parts\From;
-use Arizzo\PdoDbm\Query\Parts\GroupBy;
-use Arizzo\PdoDbm\Query\Parts\Insert;
-use Arizzo\PdoDbm\Query\Parts\Limit;
-use Arizzo\PdoDbm\Query\Parts\Offset;
-use Arizzo\PdoDbm\Query\Parts\OrderBy;
-use Arizzo\PdoDbm\Query\Parts\QueryPartInterface;
-use Arizzo\PdoDbm\Query\Parts\Select;
-use Arizzo\PdoDbm\Query\Parts\Update;
-use Arizzo\PdoDbm\Query\Parts\Where;
+use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
+use Arizzo\PdoDbm\QueryBuilder\Parts\Delete;
+use Arizzo\PdoDbm\QueryBuilder\Parts\From;
+use Arizzo\PdoDbm\QueryBuilder\Parts\GroupBy;
+use Arizzo\PdoDbm\QueryBuilder\Parts\Insert;
+use Arizzo\PdoDbm\QueryBuilder\Parts\Limit;
+use Arizzo\PdoDbm\QueryBuilder\Parts\Offset;
+use Arizzo\PdoDbm\QueryBuilder\Parts\OrderBy;
+use Arizzo\PdoDbm\QueryBuilder\Parts\QueryPartInterface;
+use Arizzo\PdoDbm\QueryBuilder\Parts\Select;
+use Arizzo\PdoDbm\QueryBuilder\Parts\Update;
+use Arizzo\PdoDbm\QueryBuilder\Parts\Where;
 use PDO;
 
 class QueryBuilder

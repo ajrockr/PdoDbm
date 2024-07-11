@@ -5,8 +5,8 @@ namespace Arizzo\PdoDbm\Database;
 use Arizzo\PdoDbm\Database\Drivers\MySQLDriver;
 use Arizzo\PdoDbm\Database\Drivers\PgSQLDriver;
 use Arizzo\PdoDbm\Database\Drivers\SQLiteDriver;
-use Arizzo\PdoDbm\Exceptions\DatabaseException;
-use Arizzo\PdoDbm\Query\QueryBuilder;
+use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
+use Arizzo\PdoDbm\QueryBuilder\QueryBuilder;
 use Exception;
 use PDO;
 class DatabaseConnection

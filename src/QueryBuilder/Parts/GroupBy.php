@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Query\Parts;
+namespace Arizzo\PdoDbm\QueryBuilder\Parts;
 
-class OrderBy implements QueryPartInterface
+class GroupBy implements QueryPartInterface
 {
     protected array $columns;
 
@@ -11,6 +11,6 @@ class OrderBy implements QueryPartInterface
     }
 
     public function getSql(): string {
-        return 'ORDER BY ' . implode(', ', $this->columns);
+        return 'GROUP BY ' . implode(', ', $this->columns);
     }
 }

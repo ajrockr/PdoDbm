@@ -3,7 +3,7 @@
 namespace Arizzo\PdoDbm\Tests;
 
 use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Exceptions\DatabaseConfigException;
+use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
 use PDO;
 use PHPUnit\Framework\TestCase;
 

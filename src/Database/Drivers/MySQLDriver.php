@@ -3,8 +3,7 @@
 namespace Arizzo\PdoDbm\Database\Drivers;
 
 use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Database\DatabaseDriverInterface;
-use Arizzo\PdoDbm\Exceptions\DatabaseException;
+use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
 use PDO;
 use RuntimeException;
 
