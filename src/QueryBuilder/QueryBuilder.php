@@ -2,7 +2,9 @@
 
 namespace Arizzo\PdoDbm\QueryBuilder;
 
-use Arizzo\PdoDbm\Database\QueryResult;
+use Arizzo\PdoDbm\Database\DatabaseConnection;
+use Arizzo\PdoDbm\Database\Result\ExecutionResult;
+use Arizzo\PdoDbm\Database\Result\QueryResult;
 use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
 use Arizzo\PdoDbm\QueryBuilder\Parts\Delete;
 use Arizzo\PdoDbm\QueryBuilder\Parts\From;
@@ -22,12 +24,12 @@ class QueryBuilder
     protected array $queryParts = [];
     protected ?QueryPartInterface $currentQueryPart = null;
 
-    protected PDO $pdo;
+    protected DatabaseConnection $connection;
     protected string $sql;
 
-    public function __construct(PDO $pdo)
+    public function __construct(DatabaseConnection $connection)
     {
-        $this->pdo = $pdo;
+        $this->connection = $connection;
     }
 
     public function query(string $sql): self
@@ -36,7 +38,7 @@ class QueryBuilder
         return $this;
     }
 
-    public function execute(): QueryResult
+    public function execute(): ExecutionResult
     {
         if (!$this->currentQueryPart instanceof Insert
             && !$this->currentQueryPart instanceof Update
@@ -44,7 +46,8 @@ class QueryBuilder
             throw new DatabaseException('Can only call "execute" on a "INSERT, UPDATE, DELETE" method');
         }
 
-        return new QueryResult($this->pdo, $this->sql);
+        $statement = $this->connection->getConnection()->exec($this->sql);
+        return new ExecutionResult($statement);
     }
 
     public function getSql(): string
@@ -54,7 +57,8 @@ class QueryBuilder
 
     public function getResult(): QueryResult
     {
-        return new QueryResult($this->pdo, $this->sql); // Figure out what to do with params
+        $statement = $this->connection->getConnection()->query($this->sql);
+        return new QueryResult($statement); // Figure out what to do with params
     }
 
     public function select(string|array $columns = '*'): self

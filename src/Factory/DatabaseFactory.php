@@ -15,18 +15,18 @@ use function DI\autowire;
 
 class DatabaseFactory
 {
-    protected static Container $container;
+    private static ?Container $container = null;
 
     /**
      * @throws \Exception
      */
     public static function getContainer()
     {
-        if (!self::$container) {
+        if (self::$container === null) {
             $builder = new ContainerBuilder();
             $builder->addDefinitions([
                 DatabaseConnection::class => autowire()->constructor(\DI\get(DatabaseConfig::class)),
-                QueryBuilder::class => autowire()
+                QueryBuilder::class => autowire()->constructor(\DI\get(DatabaseConnection::class))
             ]);
             self::$container = $builder->build();
         }
@@ -40,9 +40,9 @@ class DatabaseFactory
      * @throws NotFoundException
      * @throws \Exception
      */
-    public static function createConnection(array $config): DatabaseConnection
+    public static function createConnection(DatabaseConfig|array $config): DatabaseConnection
     {
-        $databaseConfig = new DatabaseConfig($config);
+        $databaseConfig = ($config instanceof DatabaseConfig) ? $config : new DatabaseConfig($config);
 
         self::checkExtensions($databaseConfig->get('driver'));
 

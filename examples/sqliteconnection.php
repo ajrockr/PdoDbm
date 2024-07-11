@@ -3,20 +3,18 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Database\DatabaseConnection;
+use Arizzo\PdoDbm\Factory\DatabaseFactory;
 
-$config = new DatabaseConfig([
-    'driver' => 'sqlite',
-    'path' => 'example.sqlite']);
+try {
+    $config = new DatabaseConfig([
+        'driver' => 'sqlite',
+        'path' => 'example.sqlite']);
 
-$databaseConnection = new DatabaseConnection($config);
+    $connection = DatabaseFactory::createConnection($config);
 
-$qb = $databaseConnection->getQueryBuilder();
-
-$query = $qb->select('SQLITE_VERSION()')
-    ->getQuery()
-    ->getResult()
-    ->fetchOne()
-;
-
-dd($query);
+    $queryBuilder = DatabaseFactory::createQueryBuilder();
+    $query = $queryBuilder->select('SQLITE_VERSION()')->getQuery()->getResult()->fetchOne();
+    dd($query);
+} catch (\Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
