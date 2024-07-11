@@ -9,14 +9,11 @@ class DatabaseConfig
 {
     private array $config;
 
-    private array $userProvidedConfig;
-
     /**
      * @throws DatabaseConfigException
      */
     public function __construct(array $config)
     {
-        $this->userProvidedConfig = $config;
         $this->config = $this->mergeWithDefaults($config);
         $this->validateConfig();
     }
