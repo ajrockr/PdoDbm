@@ -26,6 +26,8 @@ class QueryBuilder
     protected DatabaseConnection $connection;
     protected string $sql;
 
+    protected array $parameters;
+
     public function __construct(?DatabaseConnection $connection)
     {
         if ($connection === null) {

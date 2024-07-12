@@ -7,7 +7,6 @@ class Update implements QueryPartInterface
     protected string $table;
     protected array $set = [];
     protected array $where = [];
-    protected string $sql;
 
     public function __construct(string $table)
     {

@@ -30,7 +30,7 @@ class DatabaseConnectionTest extends TestCase
      * @throws DatabaseConfigException
      */
 //    public function testPgSQLConnection() {
-//        // Adjust these values to match your PostgreSQL server configuration
+//        // Adjust these values to match your PostgresSQL server configuration
 //        $this->runDatabaseTest('pgsql', '127.0.0.1', 'testdb', 'postgres', 'password');
 //    }
 

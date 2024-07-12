@@ -6,7 +6,6 @@ use Arizzo\PdoDbm\Database\Drivers\MySQLDriver;
 use Arizzo\PdoDbm\Database\Drivers\PgSQLDriver;
 use Arizzo\PdoDbm\Database\Drivers\SQLiteDriver;
 use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
-use Arizzo\PdoDbm\QueryBuilder\QueryBuilder;
 use PDO;
 class DatabaseConnection
 {
