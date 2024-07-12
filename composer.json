@@ -1,5 +1,6 @@
 {
     "name": "arizzo/pdo-dbm",
+    "description": "A simple database wrapper and query builder.",
     "type": "library",
     "version": "1.0.0",
     "license": "MIT",
@@ -10,6 +11,7 @@
         }
     },
     "require": {
+        "php": "^8.0",
         "ext-pdo": "*",
         "php-di/php-di": "^7.0"
     },
