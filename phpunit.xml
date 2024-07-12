@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php" colors="true" stopOnFailure="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.2/phpunit.xsd" cacheDirectory=".phpunit.cache">
   <testsuites>
-    <testsuite name="Configuration &amp; Connection Test">
-      <directory>./tests</directory>
+    <testsuite name="Configuration Test">
+      <directory>./tests/Configuration</directory>
+    </testsuite>
+    <testsuite name="Connection Test">
+      <directory>./tests/Connection</directory>
+    </testsuite>
+    <testsuite name="Factory Test">
+      <directory>./tests/Factory</directory>
+    </testsuite>
+    <testsuite name="QueryBuilder Test">
+      <directory>./tests/QueryBuilder</directory>
     </testsuite>
   </testsuites>
 </phpunit>

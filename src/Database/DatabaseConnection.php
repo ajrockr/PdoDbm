@@ -7,7 +7,6 @@ use Arizzo\PdoDbm\Database\Drivers\PgSQLDriver;
 use Arizzo\PdoDbm\Database\Drivers\SQLiteDriver;
 use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
 use Arizzo\PdoDbm\QueryBuilder\QueryBuilder;
-use Exception;
 use PDO;
 class DatabaseConnection
 {
@@ -34,9 +33,9 @@ class DatabaseConnection
         };
     }
 
-    public function getConnection(): ?PDO
+    public function getConnection(): ?DatabaseConnection
     {
-        return $this->pdo ?? null;
+        return ($this->pdo) ? $this : null;
     }
 
     public function getError(): ?string
@@ -44,8 +43,8 @@ class DatabaseConnection
         return $this->error;
     }
 
-    public function getQueryBuilder(): QueryBuilder
+    public function getPDO(): ?PDO
     {
-        return new QueryBuilder($this->pdo);
+        return $this->pdo ?? null;
     }
 }

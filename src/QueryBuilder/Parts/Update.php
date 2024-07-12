@@ -2,8 +2,6 @@
 
 namespace Arizzo\PdoDbm\QueryBuilder\Parts;
 
-use Arizzo\PdoDbm\Database\QueryResult;
-
 class Update implements QueryPartInterface
 {
     protected string $table;
@@ -19,23 +17,16 @@ class Update implements QueryPartInterface
     public function set(array $set): self
     {
         foreach ($set as $column => $value) {
-            $this->set[] = "$column = $value";
+            $this->set[] = "$column = '$value'";
         }
 
-        return $this;
-    }
-
-    public function where(array $where): self
-    {
-        $this->where = $where;
         return $this;
     }
 
     public function getSql(): string
     {
         $set = implode(', ', $this->set);
-        $where = implode(' AND ', $this->where);
 
-        return "UPDATE {$this->table} SET $set WHERE $where";
+        return "UPDATE `" . $this->table . "` SET " . $set;
     }
 }

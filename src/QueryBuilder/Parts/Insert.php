@@ -27,15 +27,15 @@ class Insert implements QueryPartInterface
 
     public function getSql(): string
     {
-        $columns = implode(', ', $this->columns);
+        $columns = '("' . implode('", "', $this->columns) . '")';
         $values = [];
 
         foreach ($this->values as $valueSet) {
-            $values[] = '(' . implode(', ', $valueSet) . ')';
+            $values[] = '("' . implode('", "', $valueSet) . '")';
         }
 
         $values = implode(', ', $values);
 
-        return "INSERT INTO {$this->table} ($columns) VALUES $values";
+        return "INSERT INTO {$this->table} $columns VALUES $values";
     }
 }

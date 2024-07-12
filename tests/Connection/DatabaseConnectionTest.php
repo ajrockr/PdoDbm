@@ -1,10 +1,10 @@
 <?php
 
-namespace Arizzo\PdoDbm\Tests;
+namespace Arizzo\PdoDbm\Tests\Connection;
 
 use Arizzo\PdoDbm\Database\DatabaseConfig;
 use Arizzo\PdoDbm\Database\DatabaseConnection;
-use Arizzo\PdoDbm\Exceptions\DatabaseConfigException;
+use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
 use InvalidArgumentException;
 use PDO;
 use PHPUnit\Framework\TestCase;
@@ -66,7 +66,7 @@ class DatabaseConnectionTest extends TestCase
         $connection = new DatabaseConnection($config);
 
         // Test connection
-        $pdo = $connection->getConnection();
+        $pdo = $connection->getConnection()->getPDO();
         $this->assertInstanceOf(PDO::class, $pdo);
 
         // Perform a basic query to test the connection

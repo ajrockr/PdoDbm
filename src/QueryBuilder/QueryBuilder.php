@@ -17,7 +17,6 @@ use Arizzo\PdoDbm\QueryBuilder\Parts\QueryPartInterface;
 use Arizzo\PdoDbm\QueryBuilder\Parts\Select;
 use Arizzo\PdoDbm\QueryBuilder\Parts\Update;
 use Arizzo\PdoDbm\QueryBuilder\Parts\Where;
-use PDO;
 
 class QueryBuilder
 {
@@ -27,8 +26,12 @@ class QueryBuilder
     protected DatabaseConnection $connection;
     protected string $sql;
 
-    public function __construct(DatabaseConnection $connection)
+    public function __construct(?DatabaseConnection $connection)
     {
+        if ($connection === null) {
+            throw new DatabaseException("Database connection does not exist.");
+        }
+
         $this->connection = $connection;
     }
 
@@ -46,8 +49,9 @@ class QueryBuilder
             throw new DatabaseException('Can only call "execute" on a "INSERT, UPDATE, DELETE" method');
         }
 
-        $statement = $this->connection->getConnection()->exec($this->sql);
-        return new ExecutionResult($statement);
+        $this->getQuery();
+        $statement = $this->connection->getConnection()->getPDO()->exec($this->sql);
+        return new ExecutionResult($statement, $this->connection->getConnection()->getPDO()->lastInsertId());
     }
 
     public function getSql(): string
@@ -57,7 +61,7 @@ class QueryBuilder
 
     public function getResult(): QueryResult
     {
-        $statement = $this->connection->getConnection()->query($this->sql);
+        $statement = $this->connection->getConnection()->getPDO()->query($this->sql);
         return new QueryResult($statement); // Figure out what to do with params
     }
 
@@ -134,6 +138,7 @@ class QueryBuilder
         if ($this->currentQueryPart instanceof Insert) {
             $this->currentQueryPart->values($values);
         }
+
         return $this;
     }
 
@@ -141,6 +146,7 @@ class QueryBuilder
         if ($this->currentQueryPart instanceof Update) {
             $this->currentQueryPart->set($set);
         }
+
         return $this;
     }
 

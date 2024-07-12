@@ -12,15 +12,9 @@ class Delete implements QueryPartInterface
         $this->table = $table;
     }
 
-    public function where(array $where): self
-    {
-        $this->where = $where;
-        return $this;
-    }
-
     public function getSql(): string
     {
         $where = implode(' AND ', $this->where);
-        return "DELETE FROM {$this->table} WHERE $where";
+        return "DELETE FROM " . $this->table;
     }
 }

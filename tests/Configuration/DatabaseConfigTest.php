@@ -1,6 +1,6 @@
 <?php
 
-namespace Arizzo\PdoDbm\Tests;
+namespace Arizzo\PdoDbm\Tests\Configuration;
 
 use Arizzo\PdoDbm\Database\DatabaseConfig;
 use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
