@@ -1,0 +1,13 @@
+* Change the QueryBuilder to use prepared statements and bindings. This will help secure queries from sql injection
+
+* Introduce JOIN clauses to the QueryBuilder
+
+* Improve folder and namespace structure
+
+* Implement more tests for full code coverage. Currently missing some operations in the QueryBuilder
+
+* Tests for MySQL and PgSQL are commented out for now, need to test those
+
+* Create more exceptions if needed
+
+* Should this library have logging? Probably not
