@@ -1,10 +1,10 @@
 <?php
 
-namespace Arizzo\PdoDbm\Tests\Connection;
+namespace Ajrockr\PdoDbm\Tests\Connection;
 
-use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Database\DatabaseConnection;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
+use Ajrockr\PdoDbm\Database\DatabaseConfig;
+use Ajrockr\PdoDbm\Database\DatabaseConnection;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseConfigException;
 use InvalidArgumentException;
 use PDO;
 use PHPUnit\Framework\TestCase;
@@ -34,9 +34,6 @@ class DatabaseConnectionTest extends TestCase
 //        $this->runDatabaseTest('pgsql', '127.0.0.1', 'testdb', 'postgres', 'password');
 //    }
 
-    /**
-     * @throws DatabaseConfigException
-     */
     private function runDatabaseTest($driver, $hostOrPath, $dbname = null, $username = null, $password = null): void
     {
         // Set up database configuration based on driver

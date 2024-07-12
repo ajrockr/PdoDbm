@@ -1,10 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Database\Result;
+namespace Ajrockr\PdoDbm\Database\Result;
 
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
-use PDO;
 use PDOStatement;
+
 class QueryResult
 {
     private PDOStatement $statement;

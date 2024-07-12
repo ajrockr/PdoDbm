@@ -1,13 +1,13 @@
 <?php
 
-namespace Arizzo\PdoDbm\Tests\QueryBuilder;
+namespace Ajrockr\PdoDbm\Tests\QueryBuilder;
 
-use Arizzo\PdoDbm\Database\DatabaseConnection;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
-use Arizzo\PdoDbm\Database\Result\ExecutionResult;
-use Arizzo\PdoDbm\Database\Result\QueryResult;
-use Arizzo\PdoDbm\Factory\DatabaseFactory;
-use Arizzo\PdoDbm\QueryBuilder\QueryBuilder;
+use Ajrockr\PdoDbm\Database\DatabaseConnection;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseConfigException;
+use Ajrockr\PdoDbm\Database\Result\ExecutionResult;
+use Ajrockr\PdoDbm\Database\Result\QueryResult;
+use Ajrockr\PdoDbm\Factory\DatabaseFactory;
+use Ajrockr\PdoDbm\QueryBuilder\QueryBuilder;
 use DI\DependencyException;
 use DI\NotFoundException;
 use PHPUnit\Framework\TestCase;

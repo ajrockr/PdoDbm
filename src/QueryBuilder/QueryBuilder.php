@@ -1,22 +1,22 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\QueryBuilder;
+namespace Ajrockr\PdoDbm\QueryBuilder;
 
-use Arizzo\PdoDbm\Database\DatabaseConnection;
-use Arizzo\PdoDbm\Database\Result\ExecutionResult;
-use Arizzo\PdoDbm\Database\Result\QueryResult;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
-use Arizzo\PdoDbm\QueryBuilder\Parts\Delete;
-use Arizzo\PdoDbm\QueryBuilder\Parts\From;
-use Arizzo\PdoDbm\QueryBuilder\Parts\GroupBy;
-use Arizzo\PdoDbm\QueryBuilder\Parts\Insert;
-use Arizzo\PdoDbm\QueryBuilder\Parts\Limit;
-use Arizzo\PdoDbm\QueryBuilder\Parts\Offset;
-use Arizzo\PdoDbm\QueryBuilder\Parts\OrderBy;
-use Arizzo\PdoDbm\QueryBuilder\Parts\QueryPartInterface;
-use Arizzo\PdoDbm\QueryBuilder\Parts\Select;
-use Arizzo\PdoDbm\QueryBuilder\Parts\Update;
-use Arizzo\PdoDbm\QueryBuilder\Parts\Where;
+use Ajrockr\PdoDbm\Database\DatabaseConnection;
+use Ajrockr\PdoDbm\Database\Result\ExecutionResult;
+use Ajrockr\PdoDbm\Database\Result\QueryResult;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseException;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\Delete;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\From;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\GroupBy;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\Insert;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\Limit;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\Offset;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\OrderBy;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\QueryPartInterface;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\Select;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\Update;
+use Ajrockr\PdoDbm\QueryBuilder\Parts\Where;
 
 class QueryBuilder
 {

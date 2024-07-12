@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\QueryBuilder\Parts;
+namespace Ajrockr\PdoDbm\QueryBuilder\Parts;
 
 class OrderBy implements QueryPartInterface
 {

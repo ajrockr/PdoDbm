@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Database\Drivers;
+namespace Ajrockr\PdoDbm\Database\Drivers;
 
-use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
+use Ajrockr\PdoDbm\Database\DatabaseConfig;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseException;
 use PDO;
 use RuntimeException;
 

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Database\Exceptions;
+namespace Ajrockr\PdoDbm\Database\Exceptions;
 
 use Exception;
 

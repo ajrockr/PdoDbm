@@ -1,13 +1,13 @@
 {
-    "name": "arizzo/pdo-dbm",
+    "name": "ajrockr/pdodbm",
     "description": "A simple database wrapper and query builder.",
     "type": "library",
     "version": "1.0.0",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Arizzo\\PdoDbm\\": "src/",
-            "Arizzo\\PdoDbm\\Tests\\": "tests/"
+            "Ajrockr\\PdoDbm\\": "src/",
+            "Ajrockr\\PdoDbm\\Tests\\": "tests/"
         }
     },
     "require": {

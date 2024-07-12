@@ -1,6 +1,6 @@
 <?php
 
-namespace Arizzo\PdoDbm\Database\Result;
+namespace Ajrockr\PdoDbm\Database\Result;
 
 class ExecutionResult
 {

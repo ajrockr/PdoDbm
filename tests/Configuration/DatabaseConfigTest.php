@@ -1,9 +1,9 @@
 <?php
 
-namespace Arizzo\PdoDbm\Tests\Configuration;
+namespace Ajrockr\PdoDbm\Tests\Configuration;
 
-use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
+use Ajrockr\PdoDbm\Database\DatabaseConfig;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseConfigException;
 use PDO;
 use PHPUnit\Framework\TestCase;
 

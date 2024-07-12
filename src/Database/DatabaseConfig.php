@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Database;
+namespace Ajrockr\PdoDbm\Database;
 
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseConfigException;
 use PDO;
 
 class DatabaseConfig

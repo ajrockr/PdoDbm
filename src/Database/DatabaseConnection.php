@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Database;
+namespace Ajrockr\PdoDbm\Database;
 
-use Arizzo\PdoDbm\Database\Drivers\MySQLDriver;
-use Arizzo\PdoDbm\Database\Drivers\PgSQLDriver;
-use Arizzo\PdoDbm\Database\Drivers\SQLiteDriver;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
+use Ajrockr\PdoDbm\Database\Drivers\MySQLDriver;
+use Ajrockr\PdoDbm\Database\Drivers\PgSQLDriver;
+use Ajrockr\PdoDbm\Database\Drivers\SQLiteDriver;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseException;
 use PDO;
 class DatabaseConnection
 {

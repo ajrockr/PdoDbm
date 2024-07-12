@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Arizzo\PdoDbm\Factory;
+namespace Ajrockr\PdoDbm\Factory;
 
-use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Database\DatabaseConnection;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseConfigException;
-use Arizzo\PdoDbm\Database\Exceptions\DatabaseException;
-use Arizzo\PdoDbm\QueryBuilder\QueryBuilder;
+use Ajrockr\PdoDbm\Database\DatabaseConfig;
+use Ajrockr\PdoDbm\Database\DatabaseConnection;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseConfigException;
+use Ajrockr\PdoDbm\Database\Exceptions\DatabaseException;
+use Ajrockr\PdoDbm\QueryBuilder\QueryBuilder;
 use DI\Container;
 use DI\ContainerBuilder;
 use DI\DependencyException;
@@ -55,6 +55,7 @@ class DatabaseFactory
     /**
      * @throws DependencyException
      * @throws NotFoundException
+     * @throws \Exception
      */
     public static function createQueryBuilder(): QueryBuilder
     {

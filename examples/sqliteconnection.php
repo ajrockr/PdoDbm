@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Arizzo\PdoDbm\Database\DatabaseConfig;
-use Arizzo\PdoDbm\Factory\DatabaseFactory;
+use Ajrockr\PdoDbm\Database\DatabaseConfig;
+use Ajrockr\PdoDbm\Factory\DatabaseFactory;
 
 try {
     $config = new DatabaseConfig([
